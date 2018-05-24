@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;
@@ -18,20 +17,19 @@ import Com.IFI.InternalTool.DAO.RoleDAO;
 import Com.IFI.InternalTool.DAO.UserRoleDAO;
 import Com.IFI.InternalTool.Model.Employee;
 
-@Service(value="userDetailsService")
+@Service
 public class UserDetailsServiceImpl  implements UserDetailsService{
 	
 	
 	@Autowired  
 	private EmployeeDAO employeeDAO;
-	
+
 	@Autowired 
 	private RoleDAO roleDAO;
 	@Autowired
 	private UserRoleDAO userRoleDAO;
-	@Autowired
-
-
+	
+	
 	@Override
     public UserDetails loadUserByUsername(String userName) throws UsernameNotFoundException {
 		Employee user = this.employeeDAO.findUserAccount(userName);

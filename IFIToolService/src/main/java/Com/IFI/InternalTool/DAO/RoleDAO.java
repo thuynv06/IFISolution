@@ -11,7 +11,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 
-@Repository(value = "employeeDAO")
+@Repository
 @Transactional(rollbackFor = Exception.class)
 
 public class RoleDAO {

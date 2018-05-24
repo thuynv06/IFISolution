@@ -10,7 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import Com.IFI.InternalTool.Model.UserRole;
 
-@Repository(value = "userroleDAO")
+@Repository
 @Transactional(rollbackFor = Exception.class)
 public class UserRoleDAO {
  
