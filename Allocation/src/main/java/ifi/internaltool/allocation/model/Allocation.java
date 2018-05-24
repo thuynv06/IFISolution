@@ -19,13 +19,12 @@ public class Allocation {
 	
 	@PrimaryKeyColumn(name = "month", type = PrimaryKeyType.CLUSTERED)
 	private int month;
-	
-	@Column("status")
+	@PrimaryKeyColumn(name = "status", type = PrimaryKeyType.CLUSTERED)
 	private boolean status;
 	@Column("completed")
 	private float completed;
-	@Column("expert")
-	private float expert;
+	@Column("expect")
+	private float expect;
 	
 	@Column("create_at")
 	private LocalDate create_at;
@@ -35,7 +34,18 @@ public class Allocation {
 	public Allocation() {
 		
 	}
-	
+	public Allocation(final UUID user_id,final UUID project_id, final int month, 
+			final boolean status,final float completed, final float expect,
+			final LocalDate create_at,final LocalDate end_at) {
+		this.user_id= user_id;
+		this.project_id=project_id;
+		this.month=month;
+		this.status=status;
+		this.completed=completed;
+		this.expect=expect;
+		this.create_at=create_at;
+		this.end_at= end_at;
+	}
 	public UUID getId() {
 		return id;
 	}
@@ -72,11 +82,11 @@ public class Allocation {
 	public void setCompleted(float completed) {
 		this.completed = completed;
 	}
-	public float getExpert() {
-		return expert;
+	public float getExpect() {
+		return expect;
 	}
-	public void setExpert(float expert) {
-		this.expert = expert;
+	public void setExpect(float expert) {
+		this.expect = expert;
 	}
 	public LocalDate getCreate_at() {
 		return create_at;

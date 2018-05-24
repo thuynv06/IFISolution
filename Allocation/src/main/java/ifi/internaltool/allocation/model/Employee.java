@@ -6,11 +6,9 @@ import java.util.UUID;
 import org.springframework.data.cassandra.core.cql.PrimaryKeyType;
 import org.springframework.data.cassandra.core.mapping.Column;
 import org.springframework.data.cassandra.core.mapping.Indexed;
-import org.springframework.data.cassandra.core.mapping.PrimaryKey;
 import org.springframework.data.cassandra.core.mapping.PrimaryKeyColumn;
 import org.springframework.data.cassandra.core.mapping.Table;
 
-import jnr.ffi.annotations.Transient;
 
 
 
@@ -32,9 +30,8 @@ public class Employee {
 	@Column("reference")
 	private Map< String, String> reference;	
 	
-	
-	private transient String name_group;
-	
+	@Column("name_group")
+	private  String name_group;
 	
 	public String getName_group() {
 		return name_group;

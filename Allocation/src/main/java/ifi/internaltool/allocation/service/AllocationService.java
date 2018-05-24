@@ -2,6 +2,8 @@ package ifi.internaltool.allocation.service;
 
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,18 +21,20 @@ public class AllocationService {
 	
 	@Autowired
 	private AllocationDAO allocationDAO;
-	
+	private static final Logger logger = LoggerFactory.getLogger(AllocationService.class);
 	
 	public List<Allocation> getAllAllocated(){	
 		System.out.println("Get all Allocation...");
-		return (List<Allocation>)allocationDAO.findAll();	
+		
+		logger.debug("asdsa");
+		List<Allocation> ls= allocationDAO.findAll();
+		return ls;	
 	}
 	
 	public Allocation createAllocation(final Allocation allocation) {
 		System.out.println("Create Allocated: " );
 		allocation.setId(UUIDs.timeBased());
 		return allocationDAO.save(allocation);
-		
 		
 	}
 	
