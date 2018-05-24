@@ -178,7 +178,16 @@ create table vacation_approved_history(
     PRIMARY KEY ( vacation_approved_history_id )
 );
 
+create table allocation_detail(
+	id bigint not null,
+	emp_pro_id bigint not null,
+    date date not null,
+    timesheet int default 8,
+    completed float
+);
 
+ALTER TABLE vacation
+ADD FOREIGN KEY (vacation_id) REFERENCES vacation_approved_history(vacation_approved_history_id) On delete cascade;
 
 INSERT INTO `internal_tool`.`role` (`role_id`, `role_name`) VALUES ('1', 'ROLE_ADMIN');
 INSERT INTO `internal_tool`.`role` (`role_id`, `role_name`) VALUES ('2', 'ROLE_USER');
