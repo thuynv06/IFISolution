@@ -9,7 +9,7 @@ import org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfigurat
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
-@ComponentScan({ "Com.IFI.InternalTool.Config"})
+@ComponentScan({ "Com.IFI.InternalTool.Config","Com.IFI.InternalTool.Controller","Com.IFI.InternalTool.Service"})
 @EnableAutoConfiguration(exclude = { DataSourceAutoConfiguration.class,
 		DataSourceTransactionManagerAutoConfiguration.class, HibernateJpaAutoConfiguration.class })
 public class IfiToolServiceApplication {

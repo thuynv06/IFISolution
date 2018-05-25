@@ -21,6 +21,7 @@ public class EmployeeDAO {
     	Session session = this.sessionFactory.getCurrentSession();
     	String hql = "FROM Employee WHERE username = :userName";
 		Query query = session.createQuery(hql);
+		query.setParameter("userName", userName);
 		Employee rs = (Employee)query.getSingleResult();
 		session.close();
 		return rs;

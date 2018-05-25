@@ -31,7 +31,7 @@ public class Employee {
 	@Column(name="age")
 	private int age;
 	@Column(name="email")
-	private int email;
+	private String email;
 	@Column(name = "phone")
 	private String phone;
 	
@@ -131,12 +131,12 @@ public class Employee {
 	}
 
 
-	public int getEmail() {
+	public String getEmail() {
 		return email;
 	}
 
 
-	public void setEmail(int email) {
+	public void setEmail(String email) {
 		this.email = email;
 	}
 
